@@ -1,0 +1,73 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+*::before, *::after {
+  content: '';
+  position: absolute;
+}
+
+html {
+  width: 100vw;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+body {
+  width: 100%;
+  position: relative;
+}
+
+ul, ol, menu {
+  list-style-type: none;
+}
+
+input, button {
+  background-color: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled, .disabled {
+  opacity: .5;
+  cursor: default;
+  transition: none !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.heading {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--clr__dk-dim);
+  color: var(--clr__dk-half);
+  letter-spacing: 0.15em;
+}
+
+.flex {
+  display: flex;
+  place-items: center;
+}
+
+.stack {
+  flex-direction: column;
+}
+
+.trans {
+  transition: var(--trans-prop) .15s linear;
+}
+
+[class^=icono] {
+  color: inherit;
+}
