@@ -15,7 +15,7 @@
 <style>
 	figure {
 		width: 100%;
-		background-image: url('rock-paper-scissors/bg-triangle.svg');
+		background-image: url('/rock-paper-scissors/bg-triangle.svg');
 		background-repeat: no-repeat;
 		background-origin: center;
 		background-position: center;
