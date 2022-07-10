@@ -12,5 +12,12 @@ export const siteMap = [
     started: 'June 21, 2022',
     completed: 'July 6, 2022',
     challengeURL: 'https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH'
+  },
+  {
+    name: 'Comment Section',
+    href: '/comments-section',
+    started: 'July 7, 2022',
+    completed: 'July 10, 2022',
+    challengeURL: 'https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9'
   }
 ]

@@ -61,7 +61,7 @@ export async function del({ request }) {
 
   console.log(id);
 
-  const { data: deleted, error } = await supabase
+  const { error } = await supabase
     .from('Comment')
     .delete()
     .match({ id });
