@@ -22,7 +22,7 @@
 
 		<CommentContent {id} {content} {replyingTo} bind:editing />
 
-		<CommentScore {id} {score} {editing} {userIsAuthor} />
+		<CommentScore comment_id={id} {score} {editing} {userIsAuthor} />
 
 		<CommentActions {id} {userIsAuthor} bind:editing bind:replying />
 	</article>

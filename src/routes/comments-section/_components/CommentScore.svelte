@@ -2,13 +2,13 @@
 	import PlusIcon from './icons/Plus.svelte';
 	import MinusIcon from './icons/Minus.svelte';
 
-	export let id;
+	export let comment_id;
 	export let score = 0;
 	export let editing;
 	export let userIsAuthor;
 
 	async function updateScore(val) {
-		const res = await fetch(`/comments-section/score?comment_id=${id}&val=${val}`);
+		const res = await fetch(`/comments-section/score?comment_id=${comment_id}&val=${val}`);
 		const { score: newScore } = await res.json();
 
 		if (res.status === 200) score = newScore;

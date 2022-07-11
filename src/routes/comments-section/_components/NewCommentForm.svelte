@@ -32,7 +32,7 @@
 		<input type="hidden" name="replyingTo" value={replyingTo} />
 	{/if}
 
-	<button class="btn" type="submit">SEND</button>
+	<button class="btn" type="submit" disabled={!newComment}>SEND</button>
 </form>
 
 <style>

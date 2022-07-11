@@ -4,10 +4,10 @@ import { responses, formDataToObj } from '$lib/utils';
 export async function get() {
   const [
     { data: user, error: userError },
-    { data: comments, error: commentsError }
+    { data: comments, error: commentsError },
   ] = await Promise.all([
     supabase.from('user_w_image').select().eq('id', 1).single(),
-    supabase.from('all_comments').select()
+    supabase.from('all_comments').select(),
   ]);
 
   if (userError || commentsError) {

@@ -8,8 +8,8 @@
 		<h3>Delete Comment?</h3>
 		<p>This action is permanent. Are you sure you want to delete the comment?</p>
 		<menu>
-			<button type="button" on:click={() => modal.close()}> NO, CANCEL </button>
-			<button type="submit" on:click|stopPropagation> YES, DELETE </button>
+			<li><button type="button" on:click={() => modal.close()}> NO, CANCEL </button></li>
+			<li><button type="submit" on:click|stopPropagation> YES, DELETE </button></li>
 		</menu>
 	</form>
 </aside>
