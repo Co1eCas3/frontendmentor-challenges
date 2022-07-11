@@ -14,6 +14,8 @@
 	let userIsAuthor = user.id === $curUser.id;
 	let editing = false;
 	let replying = false;
+
+	const cancelReplyFn = () => (replying = false);
 </script>
 
 <li>
@@ -30,7 +32,7 @@
 
 {#if replying}
 	<li>
-		<NewCommentForm comment_id={id} {parent_id} replyingTo={user.username} />
+		<NewCommentForm comment_id={id} {parent_id} replyingTo={user.username} {cancelReplyFn} />
 	</li>
 {/if}
 

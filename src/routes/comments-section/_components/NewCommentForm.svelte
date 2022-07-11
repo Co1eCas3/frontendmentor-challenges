@@ -4,6 +4,7 @@
 	export let comment_id = '';
 	export let parent_id = '';
 	export let replyingTo = '';
+	export let cancelReplyFn = () => {};
 
 	parent_id = parent_id || comment_id;
 	const isReplying = !!parent_id && !!replyingTo;
@@ -23,16 +24,25 @@
 		on:focus={() => (editing = true)}
 		on:blur={isReplying ? null : !!newComment ? null : () => (editing = false)}
 	/>
-	<input type="hidden" name="content" bind:value={newComment} />
 
+	<input type="hidden" name="content" bind:value={newComment} />
 	<input type="hidden" name="user_id" value={$curUser.id} />
 
-	{#if parent_id && replyingTo}
+	{#if isReplying}
 		<input type="hidden" name="parent_id" value={parent_id} />
 		<input type="hidden" name="replyingTo" value={replyingTo} />
 	{/if}
 
-	<button class="btn" type="submit" disabled={!newComment}>SEND</button>
+	<menu>
+		{#if isReplying}
+			<li>
+				<button type="button" on:click={cancelReplyFn}>&otimes; Cancel</button>
+			</li>
+		{/if}
+		<li>
+			<button class="btn" type="submit" disabled={!newComment}>SEND</button>
+		</li>
+	</menu>
 </form>
 
 <style>
@@ -100,12 +110,19 @@
 		border-color: var(--clr-neut__blue-dk);
 	}
 
-	button {
+	menu {
 		display: none;
 		order: 3;
+		align-items: center;
+		gap: 1em;
 	}
 
-	.editing button {
-		display: block;
+	[type='button'] {
+		color: var(--clr-prim__blue);
+		font-weight: var(--ft-wt__bold);
+	}
+
+	.editing menu {
+		display: flex;
 	}
 </style>
