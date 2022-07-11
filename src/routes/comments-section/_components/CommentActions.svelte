@@ -9,49 +9,55 @@
 
 <menu class="action__comment">
 	{#if userIsAuthor}
-		<button class="delete" on:click={() => modal.open(id)}>
-			<img src="/comments-section/icon-delete.svg" alt="Delete comment" />
-			Delete
-		</button>
+		<li>
+			<button class="delete" on:click={() => modal.open(id)}>
+				<img src="/comments-section/icon-delete.svg" alt="Delete comment" />
+				Delete
+			</button>
+		</li>
 
 		{#if editing}
-			<button class="edit" on:click={() => (editing = false)}>&otimes; Cancel</button>
+			<li>
+				<button on:click={() => (editing = false)}>&otimes; Cancel</button>
+			</li>
 		{:else}
-			<button class="edit" disabled={editing} on:click={() => (editing = true)}>
-				<img src="/comments-section/icon-edit.svg" alt="Edit comment" />
-				Edit
-			</button>
+			<li>
+				<button disabled={editing} on:click={() => (editing = true)}>
+					<img src="/comments-section/icon-edit.svg" alt="Edit comment" />
+					Edit
+				</button>
+			</li>
 		{/if}
 	{:else}
-		<button class="reply" on:click={() => (replying = true)}>
-			<img src="/comments-section/icon-reply.svg" alt="Reply arrow" />
-			Reply
-		</button>
+		<li>
+			<button on:click={() => (replying = true)}>
+				<img src="/comments-section/icon-reply.svg" alt="Reply arrow" />
+				Reply
+			</button>
+		</li>
 	{/if}
 </menu>
 
 <style>
-	[class^='action'] > * {
-		color: var(--clr-prim__blue);
-		font-weight: var(--ft-wt__bold);
-	}
-
-	.action__comment {
+	menu {
 		width: max-content;
 		grid-area: action__comment;
 		justify-self: end;
+		display: flex;
 	}
 
-	.action__comment button {
+	button {
+		color: var(--clr-prim__blue);
+		font-weight: var(--ft-wt__bold);
 		transition: opacity 0.15s;
 	}
 
-	.action__comment button:hover,
-	.action__comment button:active {
+	button:hover,
+	button:active {
 		opacity: 0.5;
 	}
 
-	.action__comment button:last-of-type {
+	button:last-of-type {
 		margin-left: 1em;
 	}
 

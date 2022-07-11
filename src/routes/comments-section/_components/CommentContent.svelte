@@ -5,6 +5,7 @@
 	export let replyingTo;
 
 	let updatedContent = content;
+	$: hasEdited = updatedContent !== content;
 </script>
 
 {#if editing}
@@ -12,7 +13,7 @@
 		<div contenteditable autofocus tabindex="1" bind:textContent={updatedContent} />
 		<input type="hidden" name="content" bind:value={updatedContent} />
 
-		<button class="btn" type="submit" tabindex="2">UPDATE</button>
+		<button class="btn" type="submit" tabindex="2" disabled={!hasEdited}>UPDATE</button>
 	</form>
 {:else}
 	<p>

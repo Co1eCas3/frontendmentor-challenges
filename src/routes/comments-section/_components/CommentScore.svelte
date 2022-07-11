@@ -16,24 +16,25 @@
 </script>
 
 {#if !editing}
-	<menu class="action__score">
-		<button class="plus" disabled={userIsAuthor} on:click={() => updateScore(1)}>
-			<PlusIcon />
-		</button>
-		<data>{score}</data>
-		<button class="minus" disabled={userIsAuthor} on:click={() => updateScore(-1)}>
-			<MinusIcon />
-		</button>
+	<menu>
+		<li>
+			<button disabled={userIsAuthor} on:click={() => updateScore(1)}>
+				<PlusIcon />
+			</button>
+		</li>
+		<li>
+			<data>{score}</data>
+		</li>
+		<li>
+			<button disabled={userIsAuthor} on:click={() => updateScore(-1)}>
+				<MinusIcon />
+			</button>
+		</li>
 	</menu>
 {/if}
 
 <style>
-	[class^='action'] > * {
-		color: var(--clr-prim__blue);
-		font-weight: var(--ft-wt__bold);
-	}
-
-	.action__score {
+	menu {
 		grid-area: action__score;
 		width: max-content;
 		height: max-content;
@@ -46,27 +47,29 @@
 		gap: 0.5em;
 	}
 
-	.action__score button {
+	button {
 		width: 1em;
 		height: 1em;
+		color: var(--clr-prim__blue);
+		font-weight: var(--ft-wt__bold);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
-	.action__score :global(svg) {
+	menu :global(svg) {
 		fill: var(--clr-prim__gray);
 		transition: fill 0.15s;
 	}
 
-	.action__score button:not([disabled]):hover :global(svg),
-	.action__score button:not([disabled]):active :global(svg) {
+	button:not([disabled]):hover :global(svg),
+	button:not([disabled]):active :global(svg) {
 		fill: var(--clr-prim__blue);
 	}
 
 	@media screen and (min-width: 35em) {
-		.action__score {
+		menu {
 			align-self: start;
 			flex-direction: column;
 			padding: 1em 0.5em;
