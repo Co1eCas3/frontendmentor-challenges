@@ -19,5 +19,12 @@ export const siteMap = [
     started: 'July 7, 2022',
     completed: 'July 10, 2022',
     challengeURL: 'https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9'
+  },
+  {
+    name: 'Launch Countdown Timer',
+    href: '/launch-countdown',
+    started: 'July 11, 2022',
+    completed: 'July 11, 2022',
+    challengURL: 'https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-'
   }
 ]
