@@ -4,9 +4,9 @@
 	export let position;
 	export let val;
 
-	const positionTitles = ['DAYS', 'HOURS', 'MINUTES', 'SECONDS'];
-
 	let prev = val;
+
+	const positionTitles = ['DAYS', 'HOURS', 'MINUTES', 'SECONDS'];
 </script>
 
 {#key val}
