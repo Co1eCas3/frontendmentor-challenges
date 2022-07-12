@@ -26,7 +26,7 @@
 		color: var(--clr-neut__wt);
 		font-family: var(--ft-fam__main);
 		font-weight: 700;
-		font-size: 14px;
+		font-size: clamp(14px, 4vw, 32px);
 		letter-spacing: 0.3em;
 		overflow: hidden;
 		display: flex;
