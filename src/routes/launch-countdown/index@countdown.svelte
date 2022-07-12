@@ -1,5 +1,8 @@
 <script>
 	import Countdown from './_components/Countdown.svelte';
+	import Facebook from './_components/icons/Facebook.svelte';
+	import Pinterest from './_components/icons/Pinterest.svelte';
+	import Instagram from './_components/icons/Instagram.svelte';
 </script>
 
 <article>
@@ -13,9 +16,9 @@
 <footer>
 	<nav>
 		<menu>
-			<li><img src="/launch-countdown/icon-facebook.svg" alt="Facebook" /></li>
-			<li><img src="/launch-countdown/icon-pinterest.svg" alt="Pinsterest" /></li>
-			<li><img src="/launch-countdown/icon-instagram.svg" alt="Instagram" /></li>
+			<li><Facebook /></li>
+			<li><Pinterest /></li>
+			<li><Instagram /></li>
 		</menu>
 	</nav>
 </footer>
@@ -47,5 +50,13 @@
 		justify-content: center;
 		align-items: center;
 		gap: 2.5em;
+	}
+
+	li :global(svg) {
+		transition: fill 0.2s;
+	}
+
+	li:hover :global(svg) {
+		fill: var(--clr-prim__red);
 	}
 </style>

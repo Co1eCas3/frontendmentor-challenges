@@ -50,10 +50,12 @@
 
 	.cont {
 		order: 1;
+		border-radius: 0.2em;
 		position: relative;
 		color: var(--clr-prim__red);
 		perspective-origin: center;
-		perspective: 90px;
+		perspective: 250px;
+		box-shadow: 0 6px 2px -2px rgba(8, 3, 12, 0.5);
 	}
 
 	.el {
