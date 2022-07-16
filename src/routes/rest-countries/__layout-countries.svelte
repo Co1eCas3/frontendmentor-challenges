@@ -31,7 +31,9 @@
 
 <main class:dark-theme={darkModeEnabled}>
 	<header>
-		<h1>Where in the world?</h1>
+		<a href="/rest-countries">
+			<h1>Where in the world?</h1>
+		</a>
 		<button on:click={toggleNSaveDarkMode}>
 			<i class="icon-moon" />
 			{darkModeEnabled ? 'Light' : 'Dark'} Mode
