@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
 	import { browser } from '$app/env';
 
 	export async function load() {
@@ -16,31 +16,23 @@
 			}
 		};
 	}
-</script>
-
+</script> -->
 <script>
-	export let darkModeEnabled;
-	$: console.log(darkModeEnabled);
-
-	function toggleNSaveDarkMode() {
-		console.log('theme toggled');
-		darkModeEnabled = !darkModeEnabled;
-		localStorage.setItem('countries-color-setting', darkModeEnabled);
-	}
+	import { darkMode } from './_stores/darkMode';
 </script>
 
 <svelte:head>
 	<title>Rest Countries API</title>
 </svelte:head>
 
-<main class:dark-theme={darkModeEnabled}>
+<main class:dark-theme={$darkMode}>
 	<header>
 		<a href="/rest-countries">
 			<h1>Where in the world?</h1>
 		</a>
-		<button on:click={toggleNSaveDarkMode}>
+		<button on:click={darkMode.toggle}>
 			<i class="icon-moon" />
-			{darkModeEnabled ? 'Light' : 'Dark'} Mode
+			{$darkMode ? 'Light' : 'Dark'} Mode
 		</button>
 	</header>
 
