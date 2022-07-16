@@ -29,6 +29,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Rest Countries API</title>
+</svelte:head>
+
 <main class:dark-theme={darkModeEnabled}>
 	<header>
 		<a href="/rest-countries">

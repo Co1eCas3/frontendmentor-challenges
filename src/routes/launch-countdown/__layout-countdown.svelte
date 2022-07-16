@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Launch Countdown Timer</title>
+</svelte:head>
+
 <main>
 	<img class="stars" src="/launch-countdown/bg-stars.svg" alt="Stars" />
 	<img class="hills" src="/launch-countdown/pattern-hills.svg" alt="Hills" />

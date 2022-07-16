@@ -1,4 +1,5 @@
 <svelte:head>
+	<title>Expense Chart Component</title>
 	<style>
 		body {
 			background-color: hsl(27, 66%, 92%); /* var(--clr__neut-cream); */

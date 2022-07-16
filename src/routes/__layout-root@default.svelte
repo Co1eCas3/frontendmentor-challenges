@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>ColeCase FrontEnd Mentor Challenges</title>
+</svelte:head>
+
 <main>
 	<slot />
 </main>

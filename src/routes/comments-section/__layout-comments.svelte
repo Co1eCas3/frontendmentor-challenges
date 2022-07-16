@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Interactive Comments Section</title>
+</svelte:head>
+
 <main>
 	<slot />
 </main>

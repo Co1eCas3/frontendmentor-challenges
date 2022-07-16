@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Rock-Paper-Scissors</title>
+</svelte:head>
+
 <main>
 	<slot />
 </main>
