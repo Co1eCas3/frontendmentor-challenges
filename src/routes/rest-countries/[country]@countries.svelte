@@ -146,11 +146,13 @@
 		flex-basis: 50%;
 		flex-grow: 1;
 		box-shadow: var(--shadow__lt);
-		/* max-width: 100%; */
+		display: flex;
+		justify-content: center;
 	}
 
 	picture > * {
-		width: 100%;
+		max-width: 100%;
+		max-height: 40vh;
 	}
 
 	section {

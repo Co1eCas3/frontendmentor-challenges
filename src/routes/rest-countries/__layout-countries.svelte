@@ -2,16 +2,19 @@
 	import { browser } from '$app/env';
 
 	export async function load() {
-		return new Promise((resolve) => {
-			if (!browser) resolve({});
+		if (!browser) return {};
 
-			let darkModeSaved = localStorage.getItem('countries-color-setting');
-			console.log('load: ', darkModeSaved);
-			if (darkModeSaved != null) darkModeSaved = darkModeSaved === 'true';
-			let prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		let darkModeSaved = localStorage.getItem('countries-color-setting');
+		console.log('load: ', darkModeSaved);
+		if (darkModeSaved != null) darkModeSaved = darkModeSaved === 'true';
 
-			resolve({ props: { darkModeEnabled: darkModeSaved ?? prefersDarkTheme } });
-		});
+		let prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		return {
+			props: {
+				darkModeEnabled: darkModeSaved ?? prefersDarkTheme
+			}
+		};
 	}
 </script>
 
@@ -20,6 +23,7 @@
 	$: console.log(darkModeEnabled);
 
 	function toggleNSaveDarkMode() {
+		console.log('theme toggled');
 		darkModeEnabled = !darkModeEnabled;
 		localStorage.setItem('countries-color-setting', darkModeEnabled);
 	}
