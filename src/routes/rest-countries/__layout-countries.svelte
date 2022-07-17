@@ -1,22 +1,3 @@
-<!-- <script context="module">
-	import { browser } from '$app/env';
-
-	export async function load() {
-		if (!browser) return {};
-
-		let darkModeSaved = localStorage.getItem('countries-color-setting');
-		console.log('load: ', darkModeSaved);
-		if (darkModeSaved != null) darkModeSaved = darkModeSaved === 'true';
-
-		let prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-		return {
-			props: {
-				darkModeEnabled: darkModeSaved ?? prefersDarkTheme
-			}
-		};
-	}
-</script> -->
 <script>
 	import { darkMode } from './_stores/darkMode';
 </script>
