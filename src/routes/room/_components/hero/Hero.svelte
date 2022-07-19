@@ -31,11 +31,25 @@
 		startTimer();
 		return stopTimer;
 	});
+
+	let touchInit;
+	function handleTouchStart({ touches: [{ clientX }] }) {
+		console.log(clientX);
+		touchInit = clientX;
+	}
+
+	function handleTouchEnd({ changedTouches: [{ clientX }] }) {
+		if (clientX < touchInit) prevArticle();
+		else nextArticle();
+
+		resetTimer();
+		touchInit = null;
+	}
 </script>
 
 <main>
 	<!-- {#key curArticleInd} -->
-	<article>
+	<article on:touchstart={handleTouchStart} on:touchend={handleTouchEnd}>
 		<div class="pic-wrapper">
 			{#key curArticleInd}
 				<picture out:fade={{ duration: 250 }} in:fade={{ duration: 400, delay: 300 }}>
