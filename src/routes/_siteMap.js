@@ -33,5 +33,12 @@ export const siteMap = [
     started: 'July 13, 2022',
     completed: 'July 16, 2022',
     challengeURL: 'https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca'
+  },
+  {
+    mane: 'Room Homepage',
+    href: '/room',
+    started: 'July 17, 2022',
+    completed: 'July 19, 2022',
+    challengeURL: 'https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq'
   }
 ]
