@@ -2,7 +2,7 @@ import { browser } from "$app/env"
 import { writable } from "svelte/store"
 
 const noop = () => { };
-const themes = ['dark', '', 'purp']
+const themes = ['dark', 'light', 'purp']
 
 const { subscribe, set: _set } = writable(themes[0], set => {
   if (!browser) return noop;
@@ -19,5 +19,6 @@ export const theme = {
   set: ind => {
     localStorage.setItem('calc-theme', ind);
     _set(themes[ind])
-  }
+  },
+  available: () => themes
 }

@@ -13,7 +13,7 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 
-	.wrapper {
+	.wrapper.light {
 		--clr-bg__main: hsl(0, 0%, 90%);
 		--clr-bg__focal: hsl(0, 5%, 81%);
 		--clr-bg__second: hsl(0, 0%, 93%);
@@ -32,13 +32,6 @@
 		--ft-fam__main: 'League Spartan', sans-serif;
 		--ft-wt__norm: 700;
 		--ft-sz__norm: 32px;
-
-		width: 100vw;
-		height: 100vh;
-		background-color: var(--clr-bg__main);
-		color: var(--ft-clr__main);
-		font-family: var(--ft-fam__main);
-		font-size: var(--ft-sz__norm);
 	}
 
 	.wrapper.dark {
@@ -73,5 +66,14 @@
 		--ft-clr__main: hsl(52, 100%, 62%);
 		--ft-clr__alt: hsl(0, 0, 100%);
 		--ft-clr__alt-sec: hsl(198, 20%, 13%);
+	}
+
+	.wrapper {
+		width: 100vw;
+		height: 100vh;
+		background-color: var(--clr-bg__main);
+		color: var(--ft-clr__main);
+		font-family: var(--ft-fam__main);
+		font-size: var(--ft-sz__norm);
 	}
 </style>
