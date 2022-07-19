@@ -39,8 +39,8 @@
 	}
 
 	function handleTouchEnd({ changedTouches: [{ clientX }] }) {
-		if (clientX < touchInit) prevArticle();
-		else nextArticle();
+		if (clientX < touchInit) nextArticle();
+		else prevArticle();
 
 		resetTimer();
 		touchInit = null;
