@@ -4,7 +4,7 @@ import { writable } from "svelte/store"
 const noop = () => { };
 const themes = ['dark', 'light', 'purp']
 
-const { subscribe, set: _set } = writable(themes[0], set => {
+const { subscribe, update, set } = writable(themes[0], set => {
   if (!browser) return noop;
 
   let saved = localStorage.getItem('calc-theme');
@@ -16,9 +16,16 @@ const { subscribe, set: _set } = writable(themes[0], set => {
 
 export const theme = {
   subscribe,
-  set: ind => {
-    localStorage.setItem('calc-theme', ind);
-    _set(themes[ind])
-  },
-  available: () => themes
+  set,
+  available: () => themes,
+  switch: () => {
+    let next;
+    update($theme => {
+      let curInd = themes.findIndex(theme => theme === $theme);
+      next = curInd === themes.length - 1 ? 0 : ++curInd;
+      return themes[next];
+    });
+
+    localStorage.setItem('calc-theme', next);
+  }
 }
