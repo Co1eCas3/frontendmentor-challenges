@@ -45,7 +45,7 @@ export const siteMap = [
     name: 'Calculator App',
     href: '/calc',
     started: 'July 19, 2022',
-    completed: '',
+    completed: 'July 21, 2022',
     challengeURL: 'https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29'
   }
 ]
