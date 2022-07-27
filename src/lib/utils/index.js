@@ -6,3 +6,4 @@ export { readableTimeSince } from './readableTimeSince';
 export { formDataToObj } from './formDataToObj';
 export { addTime } from './addTime';
 export { debounce } from './debounce';
+export { throttle } from './throttle';

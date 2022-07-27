@@ -47,5 +47,12 @@ export const siteMap = [
     started: 'July 19, 2022',
     completed: 'July 21, 2022',
     challengeURL: 'https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29'
+  },
+  {
+    name: 'Easybank Landing Page',
+    href: '/easybank',
+    started: 'July 22, 2022',
+    completed: '',
+    challengeURL: 'https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN'
   }
 ]
