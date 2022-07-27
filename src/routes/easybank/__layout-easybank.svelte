@@ -3,6 +3,10 @@
 	import Footer from './_components/Footer.svelte';
 </script>
 
+<svelte:head>
+	<title>Easybank | Landing Page</title>
+</svelte:head>
+
 <div class="wrapper">
 	<Header />
 	<slot />
