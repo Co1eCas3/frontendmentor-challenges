@@ -52,7 +52,7 @@ export const siteMap = [
     name: 'Easybank Landing Page',
     href: '/easybank',
     started: 'July 22, 2022',
-    completed: '',
+    completed: 'July 27, 2022',
     challengeURL: 'https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN'
   }
 ]
